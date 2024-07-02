@@ -201,7 +201,7 @@ public class UpdateSalary implements Update {
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3307/ems", "root", "DBMS");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ems", "root", "DBMS");
 			PreparedStatement pstm_1 = con.prepareStatement("select e_id from salary where e_id=?");
 			pstm_1.setString(1, e_id_1);
 			ResultSet rs_1 = pstm_1.executeQuery();
@@ -262,7 +262,7 @@ public class UpdateSalary implements Update {
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3307/ems", "root", "DBMS");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ems", "root", "DBMS");
 			PreparedStatement pstm = con.prepareStatement("update salary set basic_salary=?, da=?, hra=?, ma=?, cca=?, pf=?, gross_salary=?, net_salary=? where e_id=?");
 			
 			try {

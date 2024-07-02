@@ -192,7 +192,7 @@ public class EmployeeDetails implements View {
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3307/ems", "root", "DBMS");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ems", "root", "DBMS");
 			PreparedStatement pstm_1 = con.prepareStatement("select e_id from employee where e_id=?");
 			pstm_1.setString(1, e_id_1);
 			ResultSet rs_1 = pstm_1.executeQuery();

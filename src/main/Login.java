@@ -103,7 +103,7 @@ public class Login implements Log {
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3307/ems", "root", "DBMS");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ems", "root", "DBMS");
 			PreparedStatement pstm = con.prepareStatement("select username from hr where username=?");
 			pstm.setString(1, username);
 			ResultSet rs = pstm.executeQuery();
@@ -136,7 +136,7 @@ public class Login implements Log {
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3307/ems", "root", "DBMS");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ems", "root", "DBMS");
 			PreparedStatement pstm_1 = con.prepareStatement("select id from hr where username=? and password=?");
 			pstm_1.setString(1, username);
 			pstm_1.setString(2, password);
